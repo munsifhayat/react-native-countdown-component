@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
   },
   timeTxt: {
     color: 'white',
-    marginVertical: 2,
+    marginVertical: -4,
     backgroundColor: 'transparent',
   },
   timeInnerCont: {
