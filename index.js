@@ -13,7 +13,7 @@ import {sprintf} from 'sprintf-js';
 
 const DEFAULT_DIGIT_STYLE = {backgroundColor: '#FAB913'};
 const DEFAULT_DIGIT_TXT_STYLE = {color: '#000'};
-const DEFAULT_TIME_LABEL_STYLE = {color: '#000'};
+const DEFAULT_TIME_LABEL_STYLE = {color: '#999999'};
 const DEFAULT_SEPARATOR_STYLE = {color: '#000'};
 const DEFAULT_TIME_TO_SHOW = ['D', 'H', 'M', 'S'];
 const DEFAULT_TIME_LABELS = {
@@ -67,6 +67,7 @@ class CountDown extends React.Component {
       });
     }
   }
+  
   // componentWillReceiveProps(nextProps) {
   //   if (this.props.until !== nextProps.until || this.props.id !== nextProps.id) {
   //     this.setState({
@@ -135,12 +136,12 @@ class CountDown extends React.Component {
     return (
       <View style={[
         styles.digitCont,        
-        {width: size * 2.3, height: size * 2.6},
+        {width: size * 1.5, height: size * 1.3},
         digitStyle,
       ]}>
         <Text style={[
           styles.digitTxt,
-          {fontSize: size},
+          {fontSize: 16},
           digitTxtStyle,
         ]}>
           {d}
@@ -155,7 +156,7 @@ class CountDown extends React.Component {
       return (
         <Text style={[
           styles.timeTxt,
-          {fontSize: size / 1.8},
+          {fontSize: 8},
           timeLabelStyle,
         ]}>
           {label}
@@ -166,11 +167,9 @@ class CountDown extends React.Component {
 
   renderDoubleDigits = (label, digits) => {
     return (
-      <View style={styles.doubleDigitCont}>
         <View style={styles.timeInnerCont}>
           {this.renderDigit(digits)}
-        </View>
-        {this.renderLabel(label)}
+          {this.renderLabel(label)}
       </View>
     );
   };
@@ -238,32 +237,44 @@ CountDown.defaultProps = {
 const styles = StyleSheet.create({
   timeCont: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+
+    // backgroundColor : 'red',
   },
   timeTxt: {
     color: 'white',
-    marginVertical: -4,
     backgroundColor: 'transparent',
+    marginRight : 4,
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+
+    
   },
   timeInnerCont: {
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
   },
   digitCont: {
-    borderRadius: 5,
     marginHorizontal: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   doubleDigitCont: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'row',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+
   },
   digitTxt: {
     color: 'white',
     fontWeight: 'bold',
-    fontVariant: ['tabular-nums']
+    fontVariant: ['tabular-nums'] ,
+    // backgroundColor : 'blue',
+    // flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+
   },
   separatorTxt: {
     backgroundColor: 'transparent',
