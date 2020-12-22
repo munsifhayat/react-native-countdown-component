@@ -14,7 +14,7 @@ import {sprintf} from 'sprintf-js';
 const DEFAULT_DIGIT_STYLE = {backgroundColor: '#FAB913'};
 const DEFAULT_DIGIT_TXT_STYLE = {color: '#000'};
 const DEFAULT_TIME_LABEL_STYLE = {color: '#999999'};
-const DEFAULT_SEPARATOR_STYLE = {color: '#000'};
+const DEFAULT_SEPARATOR_STYLE = {color: '#171D4B'};
 const DEFAULT_TIME_TO_SHOW = ['D', 'H', 'M', 'S'];
 const DEFAULT_TIME_LABELS = {
   d: 'Days',
@@ -268,17 +268,15 @@ const styles = StyleSheet.create({
   },
   digitTxt: {
     color: 'white',
-    fontWeight: 'bold',
-    fontVariant: ['tabular-nums'] ,
-    // backgroundColor : 'blue',
-    // flexDirection: 'row',
+    // fontWeight: 'bold',
+    // fontVariant: ['tabular-nums'] ,
     justifyContent: 'center',
     alignItems: 'center',
 
   },
   separatorTxt: {
     backgroundColor: 'transparent',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
   },
 });
 
